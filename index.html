@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pro Pocket Beauty｜本格集客分析</title>
+<link rel="stylesheet" href="./css/dashboard.css">
+</head>
+<body>
+<header class="topbar">
+  <div><p class="eyebrow">PRO POCKET BEAUTY ANALYTICS</p><h1>本格集客分析ダッシュボード</h1></div>
+  <button id="reload" class="button">データ更新</button>
+</header>
+
+<main class="container">
+  <section class="toolbar panel">
+    <label>集計期間
+      <select id="period">
+        <option value="all">全期間</option><option value="today">今日</option>
+        <option value="7">過去7日</option><option value="30" selected>過去30日</option>
+        <option value="90">過去90日</option><option value="365">過去365日</option>
+      </select>
+    </label>
+    <p id="status">読み込み中…</p>
+  </section>
+
+  <section class="metrics">
+    <div class="metric"><span>PV</span><strong id="pv">0</strong><small>ページ表示回数</small></div>
+    <div class="metric"><span>訪問者数</span><strong id="users">0</strong><small>ユニークユーザー</small></div>
+    <div class="metric"><span>セッション数</span><strong id="sessions">0</strong><small>ユニークセッション</small></div>
+    <div class="metric"><span>新規訪問</span><strong id="newUsers">0</strong><small>新規判定の記録</small></div>
+    <div class="metric"><span>平均滞在時間</span><strong id="duration">0秒</strong><small>記録されている値のみ</small></div>
+    <div class="metric"><span>平均スクロール率</span><strong id="scroll">0%</strong><small>記録されている値のみ</small></div>
+  </section>
+
+  <section class="grid-two">
+    <article class="panel"><h2>日別PV</h2><div id="dailyChart" class="chart"></div></article>
+    <article class="panel"><h2>月別PV</h2><div id="monthlyChart" class="chart"></div></article>
+  </section>
+
+  <section class="grid-two">
+    <article class="panel"><h2>曜日別アクセス</h2><div id="weekdayList" class="rank-list"></div></article>
+    <article class="panel"><h2>時間帯別アクセス</h2><div id="hourList" class="rank-list"></div></article>
+  </section>
+
+  <section class="grid-three">
+    <article class="panel"><h2>人気ページ</h2><div id="pageList" class="rank-list"></div></article>
+    <article class="panel"><h2>流入元・媒体</h2><div id="sourceList" class="rank-list"></div></article>
+    <article class="panel"><h2>キャンペーン</h2><div id="campaignList" class="rank-list"></div></article>
+  </section>
+
+  <section class="grid-three">
+    <article class="panel"><h2>国別</h2><div id="countryList" class="rank-list"></div></article>
+    <article class="panel"><h2>都道府県・地域別</h2><div id="regionList" class="rank-list"></div></article>
+    <article class="panel"><h2>市区町村別</h2><div id="cityList" class="rank-list"></div></article>
+  </section>
+
+  <section class="grid-three">
+    <article class="panel"><h2>デバイス</h2><div id="deviceList" class="rank-list"></div></article>
+    <article class="panel"><h2>ブラウザ</h2><div id="browserList" class="rank-list"></div></article>
+    <article class="panel"><h2>OS</h2><div id="osList" class="rank-list"></div></article>
+  </section>
+
+  <section class="grid-two">
+    <article class="panel"><h2>新規・リピーター</h2><div id="visitorType" class="rank-list"></div></article>
+    <article class="panel"><h2>言語</h2><div id="languageList" class="rank-list"></div></article>
+  </section>
+
+  <section class="panel">
+    <div class="section-title"><h2>アクセス明細</h2><span id="rowCount"></span></div>
+    <div class="table-wrap"><table><thead><tr>
+      <th>日時</th><th>ページ</th><th>タイトル</th><th>国</th><th>地域</th><th>市区町村</th>
+      <th>流入元</th><th>媒体</th><th>端末</th><th>ブラウザ</th><th>滞在</th><th>スクロール</th>
+    </tr></thead><tbody id="details"></tbody></table></div>
+  </section>
+</main>
+<script src="./js/config.js"></script>
+<script src="./js/dashboard.js"></script>
+</body></html>
